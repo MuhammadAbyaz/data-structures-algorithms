@@ -32,6 +32,8 @@ class Tree:
         return root
 
     def search(self, value: T, **kwargs):
+        if self._bstNode is None:
+            return -1
         if len(kwargs) == 0:
             root = self._bstNode
         else:
@@ -44,3 +46,36 @@ class Tree:
             return self.search(value, input_root=root.left)
         else:
             return self.search(value, input_root=root.right)
+
+    def max(self, **kwargs):
+        if self._bstNode is None:
+            return -1
+        if len(kwargs) == 0:
+            root = self._bstNode
+        else:
+            root = kwargs["input_root"]
+        if root.right is None:
+            return root.value
+        return self.max(input_root=root.right)
+
+    def min(self, **kwargs):
+        if self._bstNode is None:
+            return -1
+        if len(kwargs) == 0:
+            root = self._bstNode
+        else:
+            root = kwargs["input_root"]
+        if root.left is None:
+            return root.value
+        return self.min(input_root=root.left)
+
+    def find_height(self, **kwargs):
+        if len(kwargs) == 0:
+            root = self._bstNode
+        else:
+            root = kwargs["input_root"]
+        if root is None:
+            return -1
+        left = self.find_height(input_root=root.left)
+        right = self.find_height(input_root=root.right)
+        return max(left, right) + 1
