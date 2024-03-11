@@ -1,4 +1,4 @@
-type SNode<T>{
+type SNode<T> = {
     value : T,
     prev?:SNode<T>;
 }
