@@ -1,3 +1,5 @@
+import { BinaryNode } from "./BT-preorder";
+
 function inorder_walk(curr: BinaryNode<number>, path: number[]): number[] {
   if (!curr) {
     return path;

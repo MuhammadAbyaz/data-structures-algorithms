@@ -1,3 +1,4 @@
+import { BinaryNode } from "./BT-preorder";
 function bfs(head: BinaryNode<number>, needle: number): boolean {
   const q: (BinaryNode<number> | null)[] = [head];
   while (q.length) {

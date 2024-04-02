@@ -1,3 +1,5 @@
+import { BinaryNode } from "./BT-preorder";
+
 function post_walk(curr: BinaryNode<number> | null, path: number[]): number[] {
   if (!curr) {
     return path;

@@ -1,4 +1,4 @@
-type BinaryNode<T> = {
+export type BinaryNode<T> = {
   value: number;
   left: BinaryNode<T>;
   right: BinaryNode<T>;
